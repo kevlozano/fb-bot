@@ -60,7 +60,7 @@ function process_event(event){
         var hola = mssg.search("hola");
         if (hola) {
             var response = {
-                "text": "hola back"
+                "text": hola
             }
         }
         else {
