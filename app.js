@@ -56,10 +56,19 @@ function process_event(event){
     
     // Si en el evento existe un mensaje de tipo texto
     if(message.text){
-        // Crear un payload para un simple mensaje de texto
-        var response = {
-            "text": 'Enviaste este mensaje: ' + message.text
+        var mssg = message.text;
+        var hola = mssg.search("hola");
+        if (hola) {
+            var response = {
+                "text": "hola back"
+            }
         }
+        else {
+            var response = {
+                "text": 'Enviaste este mensaje: ' + message.text
+            }
+        }
+
     }
     
     // Enviamos el mensaje mediante SendAPI
