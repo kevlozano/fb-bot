@@ -58,6 +58,8 @@ function handleMessage(mssg) {
     let slim = mssg.includes("slim");
     let promo = mssg.includes("promo");
 
+    console.log("in handleMessage");
+
     if (slim > 0)
         return "La renta de trajes slim fit va desde 800$. Manejamos en negro, azul, gris y rojo."
     else if ((precio > 0 || cuanto > 0) && venta != 1)
@@ -79,7 +81,7 @@ function process_event(event){
     // Capturamos los datos del que genera el evento y el mensaje 
     var senderID = event.sender.id;
     var message = event.message;
-    
+    console.log("in process event: " + event.message);
     // Si en el evento existe un mensaje de tipo texto
     if(message.text){
         var response = {
