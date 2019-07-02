@@ -71,6 +71,8 @@ function handleMessage(mssg) {
         return "Manejamos desde talla 1 para niños hasta la 60 para adultos.";
     else if (hora > 0)
         return "Estamos abiertos de 10am a 8pm de Lunes a Sábado (sábados hasta las 7pm).";
+    else
+        return "no reconocido";
 }
 
 // Funcion donde se procesara el evento
