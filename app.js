@@ -53,7 +53,7 @@ function handleMessage(mssg) {
     let talla = mssg.includes("talla");
     let hora = mssg.includes("hora");
 
-    if (precio >= 0)
+    if (precio > 0)
         return precio;
     else if (direccion >= 0)
         return "direccion";
