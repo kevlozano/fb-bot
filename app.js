@@ -55,11 +55,11 @@ function handleMessage(mssg) {
 
     if (precio > 0)
         return precio;
-    else if (direccion >= 0)
+    else if (direccion > 0)
         return "direccion";
-    else if (talla >= 0)
+    else if (talla > 0)
         return "talla";
-    else if (hora >= 0)
+    else if (hora > 0)
         return "hora";
     else 
         return "no reconocido";
