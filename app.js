@@ -47,6 +47,23 @@ app.post("/webhook", function (req, res) {
     }
 });
 
+function handleMessage(mssg) {
+    let precio = mssg.includes("precio");
+    let direccion = mssg.includes("direccion");
+    let talla = mssg.includes("talla");
+    let hora = mssg.includes("hora");
+
+    if (precio >= 0)
+        return "precio";
+    else if (direccion >= 0)
+        return "direccion";
+    else if (talla >= 0)
+        return "talla";
+    else if (hora >= 0)
+        return "hora";
+    else 
+        return "no reconocido";
+}
 
 // Funcion donde se procesara el evento
 function process_event(event){
@@ -56,21 +73,10 @@ function process_event(event){
     
     // Si en el evento existe un mensaje de tipo texto
     if(message.text){
-        var mssg = message.text;
-        var hola = mssg.search("hola");
-        if (hola >= 0) {
-            var response = {
-                "text": hola
-            }
+        var response = {
+            "text": handleMessage(message.text)
         }
-        else {
-            var response = {
-                "text": 'Enviaste este mensaje: ' + message.text
-            }
-        }
-
     }
-    
     // Enviamos el mensaje mediante SendAPI
     enviar_texto(senderID, response);
 }
