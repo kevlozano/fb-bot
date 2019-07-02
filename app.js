@@ -56,6 +56,7 @@ function handleMessage(mssg) {
     let talla = mssg.includes("talla");
     let hora = mssg.includes("hora");
     let slim = mssg.includes("slim");
+    let promo = mssg.includes("promo");
 
     if (slim > 0)
         return "La renta de trajes slim fit va desde 800$. Manejamos en negro, azul, gris y rojo."
