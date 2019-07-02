@@ -75,7 +75,7 @@ function process_event(event){
     // Si en el evento existe un mensaje de tipo texto
     if(message.text){
         var response = {
-            "text": handleMessage(message.text)
+            "text": "hola"
         }
     }
     // Enviamos el mensaje mediante SendAPI
