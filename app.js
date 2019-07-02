@@ -49,29 +49,20 @@ app.post("/webhook", function (req, res) {
 
 function handleMessage(mssg) {
     let precio = mssg.includes("precio");
-    let cuanto = mssg.includes("cuanto");
-    let venta = mssg.includes("venta");
     let direccion = mssg.includes("direccion");
     let ubicacion = mssg.includes("ubicacion");
     let talla = mssg.includes("talla");
     let hora = mssg.includes("hora");
-    let slim = mssg.includes("slim");
 
-    if (slim > 0)
-        return "La renta de trajes slim fit va desde 800$. Manejamos en negro, azul, gris y rojo.";
-    else if ((precio > 0 || cuanto > 0) && venta != 1)
-        return "Buen día, la renta va desde 600$. Incluye saco, camisa, pantalon y corbata";
-    else if (venta > 0)
-        return "La renta va desde 600$. No manejamos ventas.";
-    else if (promo > 0)
-        return "Por la temporada manejamos la renta de dos o más trajes slim fit con 10% de descuento. Y la renta de 3 o más smoking también con 10% de descuento.";
-    else if (direccion > 0 || ubicacion > 0)
-        return "Avenida general Nicolas Bravo 619, colonia La Huerta. Guadalupe, NL. A un lado de Soriana Guadalupe.";
+    if (precio > 0)
+        return "precio";
+    else if (direccion > 0)
+        return "direccion";
     else if (talla > 0)
-        return "Manejamos desde talla 1 para niños hasta la 60 para adultos.";
+        return "talla";
     else if (hora > 0)
-        return "Estamos abiertos de 10am a 8pm de Lunes a Sábado (sábados hasta las 7pm).";
-    else
+        return "hora";
+    else 
         return "no reconocido";
 }
 
