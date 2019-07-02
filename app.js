@@ -81,13 +81,14 @@ function process_event(event){
     // Capturamos los datos del que genera el evento y el mensaje 
     var senderID = event.sender.id;
     var message = event.message;
-    console.log("in process event: " + event.message);
+    console.log("in process event: " + event.message.text);
     // Si en el evento existe un mensaje de tipo texto
     if(message.text){
         var response = {
             "text": handleMessage(message.text)
         }
     }
+    console.log("response is: " + response.text);
     // Enviamos el mensaje mediante SendAPI
     enviar_texto(senderID, response);
 }
