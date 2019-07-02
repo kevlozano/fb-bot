@@ -58,7 +58,7 @@ function process_event(event){
     if(message.text){
         var mssg = message.text;
         var hola = mssg.search("hola");
-        if (hola) {
+        if (hola >= 0) {
             var response = {
                 "text": hola
             }
