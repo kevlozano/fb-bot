@@ -51,8 +51,9 @@ function handleMessage(mssg) {
     let precio = mssg.includes("precio");
     let cuanto = mssg.includes("cuanto");
     let venta = mssg.includes("venta");
-    let direccion = mssg.includes("direccion");
-    let ubicacion = mssg.includes("ubicacion");
+    let renta = mssg.includes("renta");
+    let direccion = mssg.includes("direc");
+    let ubicacion = mssg.includes("ubica");
     let talla = mssg.includes("talla");
     let hora = mssg.includes("hora");
     let slim = mssg.includes("slim");
@@ -62,7 +63,7 @@ function handleMessage(mssg) {
 
     if (slim > 0)
         return "La renta de trajes slim fit va desde 800$. Manejamos en negro, azul, gris y rojo."
-    else if ((precio > 0 || cuanto > 0) && venta != 1)
+    else if ((precio > 0 || cuanto > 0) && (venta != 1 && renta > 0))
         return "Buen día, la renta va desde 600$. Incluye saco, camisa, pantalon y corbata";
     else if (venta > 0)
         return "La renta va desde 600$. No manejamos ventas.";
